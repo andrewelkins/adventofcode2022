@@ -6,7 +6,7 @@ except ModuleNotFoundError:
     print("Helpers not found, make sure to run from within the day folder")
     exit()
 
-DAY = '$REPLACE_ME$'
+DAY = os.path.basename(os.getcwd())
 
 def part1():
     print("Part 1")
