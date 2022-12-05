@@ -22,9 +22,9 @@ def create_folder_structure():
         if not os.path.exists(day):
             os.mkdir(day)
 
-        os.popen("cp -n template/puzzle.py {}/puzzle.py".format(str(day))) 
+        os.popen("cp template/puzzle.py {}/puzzle.py".format(str(day))) 
 
             
 def check_input_exists(day):
-    if not os.path.exists(day + '/input.txt'):
+    if not os.path.exists('input.txt'):
         FileNotFoundError('Input file not found for day ' + day)
