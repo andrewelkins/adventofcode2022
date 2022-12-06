@@ -8,28 +8,25 @@ except ModuleNotFoundError:
 
 DAY = os.path.basename(os.getcwd())
 
+def parse_scan(puzzle, scan_length):
+    input_length = len(puzzle)
+    scan_length_index = scan_length - 1
+    for i in range(scan_length_index, input_length):
+        scan = puzzle[i-scan_length_index:i+1]
+        scan_set = set(scan)
+        if len(scan_set) == scan_length:
+            return i+1
+
 def part1():
     print("Part 1")
     puzzle = helpers.parse_input('input.txt')[0]
-    input_length = len(puzzle)
-    for i in range(3, input_length):
-        scan = puzzle[i-3:i+1]
-        scan_set = set(scan)
-        if len(scan_set) == 4:
-            print("Found a match {}".format(i+1))
-            break
+    print("Found a match {}".format(parse_scan(puzzle, 4)))
 
 
 def part2():
     print("Part 2")
     puzzle = helpers.parse_input('input.txt')[0]
-    input_length = len(puzzle)
-    for i in range(13, input_length+1):
-        scan = puzzle[i-13:i+1]
-        scan_set = set(scan)
-        if len(scan_set) == 14:
-            print("Found a match {}".format(i+1))
-            break
+    print("Found a match {}".format(parse_scan(puzzle, 14)))
 
 if __name__ == "__main__":
     print("Day " + DAY)
