@@ -1,11 +1,10 @@
 import os
 
 
-def get_filename(day):
+def get_filename():
     dirname = os.path.dirname(__file__)
-    filename = os.path.join(dirname, day + '/input.txt')
+    filename = os.path.join(dirname, 'input.txt')
     return filename
-
 
 def parse_input(filename):
     with open(filename) as file:
@@ -22,7 +21,7 @@ def create_folder_structure():
         if not os.path.exists(day):
             os.mkdir(day)
 
-        os.popen("cp template/puzzle.py {}/puzzle.py".format(str(day))) 
+        os.popen("cp -n template/puzzle.py {}/puzzle.py".format(str(day))) 
 
             
 def check_input_exists(day):

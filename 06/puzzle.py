@@ -10,11 +10,26 @@ DAY = os.path.basename(os.getcwd())
 
 def part1():
     print("Part 1")
-    helpers.check_input_exists(DAY)
+    puzzle = helpers.parse_input('input.txt')[0]
+    input_length = len(puzzle)
+    for i in range(3, input_length):
+        scan = puzzle[i-3:i+1]
+        scan_set = set(scan)
+        if len(scan_set) == 4:
+            print("Found a match {}".format(i+1))
+            break
+
 
 def part2():
     print("Part 2")
-    helpers.check_input_exists(DAY)
+    puzzle = helpers.parse_input('input.txt')[0]
+    input_length = len(puzzle)
+    for i in range(13, input_length+1):
+        scan = puzzle[i-13:i+1]
+        scan_set = set(scan)
+        if len(scan_set) == 14:
+            print("Found a match {}".format(i+1))
+            break
 
 if __name__ == "__main__":
     print("Day " + DAY)
