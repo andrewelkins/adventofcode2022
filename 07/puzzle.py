@@ -69,7 +69,7 @@ def part2():
         for sub_node in LevelOrderIter(node):
             node.total_directory_size += sub_node.directory_size
 
-    directory_catch = 2800000
+    directory_catch = 30000000 - (70000000 - tree.total_directory_size)
     large_subdirectories = search.findall(tree, filter_=lambda node: node.total_directory_size > directory_catch )
     span_directory =  None
     span_diff = 0
