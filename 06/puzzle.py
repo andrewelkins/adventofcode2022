@@ -40,7 +40,7 @@ if __name__ == "__main__":
     print("Day " + DAY)
     print("=====")
     part1()
-    time.sleep(1)
+    time.sleep(2)
     print("=====")
     part2()
     print("=====")

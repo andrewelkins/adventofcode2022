@@ -8,13 +8,20 @@ except ModuleNotFoundError:
 
 DAY = os.path.basename(os.getcwd())
 
+DEBUG = True
+
 def part1():
     print("Part 1")
-    helpers.check_input_exists(DAY)
+    puzzle = helpers.parse_input('input.txt')
+    if DEBUG:
+        puzzle = helpers.parse_input('input-test.txt')
+    
 
 def part2():
     print("Part 2")
-    helpers.check_input_exists(DAY)
+    puzzle = helpers.parse_input('input.txt')
+    if DEBUG:
+        puzzle = helpers.parse_input('input-test.txt')
 
 if __name__ == "__main__":
     print("Day " + DAY)
